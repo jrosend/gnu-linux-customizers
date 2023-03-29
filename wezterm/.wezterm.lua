@@ -22,7 +22,7 @@ config.window_close_confirmation = 'NeverPrompt'
 
 -- WSL
 
-config.default_domain = "WSL:Arch"
+config.default_domain = "WSL:ArchWSL"
 config.default_prog = { "wsl.exe" } 
 
 -- KEYS
@@ -39,6 +39,11 @@ config.keys = {
         key = '%',
         mods = 'CTRL|SHIFT|ALT',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    {
+      key = 'w',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.CloseCurrentPane { confirm = false },
     },
     {
         key = 'LeftArrow',
