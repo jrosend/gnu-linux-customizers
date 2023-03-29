@@ -2,6 +2,8 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 
+local wallpaperPath = 'C:\\Users\\Jhonatas\\OneDrive\\Imagens\\wallpapers\\lhynhwgrvrvnlhawgrvhbuki.jpg'
+
 -- This table will hold the configuration.
 local config = {}
 
@@ -17,12 +19,21 @@ config.color_scheme = 'Dracula (Official)'
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = true
 config.window_decorations = 'RESIZE'
-
 config.window_close_confirmation = 'NeverPrompt'
+
+config.background = {
+  -- This is the deepest/back-most layer. It will be rendered first
+  {
+    source = {
+      File = wallpaperPath,
+    },
+    hsb = { brightness = 0.8 }
+  },
+}
 
 -- WSL
 
-config.default_domain = "WSL:ArchWSL"
+config.default_domain = "WSL:Arch"
 config.default_prog = { "wsl.exe" } 
 
 -- KEYS
@@ -64,7 +75,7 @@ config.keys = {
         key = 'DownArrow',
         mods = 'CTRL|SHIFT',
         action = act.ActivatePaneDirection 'Down',
-    },
+    }, 
   }
 
 -- and finally, return the configuration to wezterm
